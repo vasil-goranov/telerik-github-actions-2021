@@ -22,9 +22,9 @@ jobs:
     - name: Lint with pylint
       run: |
         python lint_test.py
-    # - name: Style with pycodestyle
-    #   run: |
-    #     pycodestyle *.py
+    - name: Style with pycodestyle
+      run: |
+        pycodestyle *.py
     - name: Unit testing
       run: |
         python3 -m doctest factorial.py
