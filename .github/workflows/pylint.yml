@@ -1,4 +1,5 @@
-name: Deployment-of-python-app
+name: Telerik-Github-Actions-Practice
+
 on: [push]
 jobs:
   build:
@@ -18,21 +19,21 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
         pip install pycodestyle
-    - name: Lint with pylint
-      run: |
-        python lint_test.py
     - name: Unit testing
       run: |
         python3 -m doctest factorial.py
+    - name: Lint with pylint
+      run: |
+        python lint_test.py
     - name: Style with pycodestyle
       run: |
         pycodestyle *.py
     - name: Build container
-      run: | 
+      run: |
         sleep 5
         echo "Building container iamge"
     - name: Deploy
       run: | 
-       sleep 5
-       echo "Deploying to cluster"
-    
+        sleep 5
+        echo "Deploying to cluster"
+
